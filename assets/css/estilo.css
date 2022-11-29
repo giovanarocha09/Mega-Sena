@@ -43,7 +43,7 @@ body{
 /*Botoes*/
 
 /*numeros*/
-.numeros button {
+main button {
     height: 35px;
     width: 35px;
     border-radius: 50%;
@@ -54,12 +54,16 @@ body{
     font-size: 13px;
 }
 
-.numeros button:hover{
+main button:hover{
     border: 2px solid rgb(172, 171, 171);
 }
 
+main button:hover:disabled{
+    cursor: not-allowed;
+}
+
 /*aposta*/
-.aposta{
+#aposta{
     
     margin-top: 20px;
     margin-bottom: 15px;
@@ -74,10 +78,25 @@ body{
 
 }
 
-.aposta:hover{
+#aposta:hover{
     border: 2px solid #000000;
     background: #1ca445;
     color: #fff;
+}
+
+#aposta:hover:disabled{
+    
+    margin-top: 20px;
+    margin-bottom: 15px;
+    background: transparent;
+    border-radius: 5px;
+    border-style: hidden;
+    width: 100px;
+    height: 30px;
+    cursor: not-allowed;
+    border: 1px solid #000000;
+    background-color: #bbb;
+
 }
 
 /*RESULTADO*/
@@ -128,11 +147,12 @@ footer .destac{
     /*BODY*/
     .container{
         max-width: 400px;
-        min-height: 250px;
+        min-height: 200px;
         border: 2px solid #000000;
         padding: 5px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0;
         border-radius: 5%;
+
     }
 
     /*NUMEROS*/
