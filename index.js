@@ -1,15 +1,33 @@
 //Variáveis 
 
-const numerosapostados = []
+const numerosapostados = [];
 
 const aposta =document.getElementById('aposta');
 aposta.disabled = true;
 
 let valoraposta = 0
 
+const resultado = [];
+
+sortearnumeros();
+
+//Funcao gerar numero aleatório 
+function sortearnumeros(){
+    for(i = 0; i <6; i++){
+        let numerosorteado = Math.round(Math.random() * 59 + 1 );
+
+        //caso se repita o numero
+        while(resultado.includes(numerosorteado)){
+            let numerosorteado = Math.round(Math.random() * 59 + 1 );
+        }
+
+        //Adicionar na lista 
+        resultado.push(numerosorteado);
+    }
+}
 
 
-
+//Funcao geral
 function selecionarnumeros(numero){
 
     if(numerosapostados.length >= 0 && numerosapostados.length < 15){
@@ -37,7 +55,7 @@ function selecionarnumeros(numero){
 
 }
 
-//Funcao para o numeros que o usuario escolher
+//Funcao para mudar a cor dos numeros que o usuario escolher
 function desabilitarnumeroescolhido(numero){
     document.getElementById('num_' + numero).disabled = true;
     document.getElementById('num_' + numero).style.background = "#1ca445";
@@ -46,7 +64,6 @@ function desabilitarnumeroescolhido(numero){
 }
 
 // Funcao para Mostrar o valor da aposta
-
 function valordaaposta(){
     switch(numerosapostados.length){
 
